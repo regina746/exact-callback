@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="nl"><head><meta charset="utf-8"><title>Exact-koppeling</title></head>
+<body style="font-family:system-ui;padding:40px">
+<p id="m">Doorsturen naar je eigen computer…</p>
+<script>
+  // Exact stuurt hierheen met ?code=…&state=…. Stuur door naar het lokale script.
+  // De code verlaat je browser niet richting een andere server.
+  var q = location.search;
+  if (q.indexOf("code=") > -1) { location.replace("http://127.0.0.1:8080/callback" + q); }
+  else { document.getElementById("m").textContent = "Geen code ontvangen."; }
+</script>
+</body></html>
